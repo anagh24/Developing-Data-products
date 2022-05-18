@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coursera Developing Data Products Week 4 Assignment, Reproducible Pitch</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Coursera Developing Data Products Week 4 Assignment, Reproducible Pitch">
+  <meta name="author" content="Anagh Das">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  
+  <hgroup class="auto-fadein">
+    <h1>Coursera Developing Data Products Week 4 Assignment, Reproducible Pitch</h1>
+    <h2></h2>
+    <p>Anagh Das<br/></p>
+  </hgroup>
+  
+  <article></article>  
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <hgroup>
+    <h2>Coursera Reproducible Pitch</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>See the Regression Models Course Project</h3>
+
+<ul>
+<li>Find here all the data that have been use for this presentation and also for the first part of the data Science Project: &quot;First, you will create a Shiny application and deploy it on Rstudio&#39;s servers.Second, you will use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about your application.&quot;</li>
+</ul>
+
+<h3>Find all details here</h3>
+
+<p>URL:<em><a href="https://www.coursera.org/learn/data-products/peer/tMYrn/course-project-shiny-application-and-reproducible-pitch">https://www.coursera.org/learn/data-products/peer/tMYrn/course-project-shiny-application-and-reproducible-pitch</a></em></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h2>mtcars Dataset</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Motor Trend Car Road Tests</h3>
+
+<blockquote>
+<p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models).</p>
+</blockquote>
+
+<h3>Source</h3>
+
+<blockquote>
+<p>Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391-411.</p>
+</blockquote>
+
+<pre><code class="r">library(datasets)
+head(mtcars, 3)
+</code></pre>
+
+<pre><code>##                mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+</code></pre>
+
+<hr>
+
+<h2>mtcars Dataset - Format</h2>
+
+<p><strong>A data frame with 32 observations on 11 variables.</strong></p>
+
+<table><thead>
+<tr>
+<th>Index</th>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[, 1]</td>
+<td>mpg</td>
+<td>Miles/(US) gallon</td>
+</tr>
+<tr>
+<td>[, 2]</td>
+<td>cyl</td>
+<td>Number of cylinders</td>
+</tr>
+<tr>
+<td>[, 3]</td>
+<td>disp</td>
+<td>Displacement (cu.in.)</td>
+</tr>
+<tr>
+<td>[, 4]</td>
+<td>hp</td>
+<td>Gross horsepower</td>
+</tr>
+<tr>
+<td>[, 5]</td>
+<td>drat</td>
+<td>Rear axle ratio</td>
+</tr>
+<tr>
+<td>[, 6]</td>
+<td>wt</td>
+<td>Weight (lb/1000)</td>
+</tr>
+<tr>
+<td>[, 7]</td>
+<td>qsec</td>
+<td>1/4 mile time</td>
+</tr>
+<tr>
+<td>[, 8]</td>
+<td>vs</td>
+<td>V/S</td>
+</tr>
+<tr>
+<td>[, 9]</td>
+<td>am</td>
+<td>Transmission (0 = automatic, 1 = manual)</td>
+</tr>
+<tr>
+<td>[,10]</td>
+<td>gear</td>
+<td>Number of forward gears</td>
+</tr>
+<tr>
+<td>[,11]</td>
+<td>carb</td>
+<td>Number of carburetors</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  
+  <hgroup>
+    <h2>mtcars Dataset - Format</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>A data frame with 32 observations on 11 variables.</strong></p>
+
+<table><thead>
+<tr>
+<th>Index</th>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[, 1]</td>
+<td>mpg</td>
+<td>Miles/(US) gallon</td>
+</tr>
+<tr>
+<td>[, 2]</td>
+<td>cyl</td>
+<td>Number of cylinders</td>
+</tr>
+<tr>
+<td>[, 3]</td>
+<td>disp</td>
+<td>Displacement (cu.in.)</td>
+</tr>
+<tr>
+<td>[, 4]</td>
+<td>hp</td>
+<td>Gross horsepower</td>
+</tr>
+<tr>
+<td>[, 5]</td>
+<td>drat</td>
+<td>Rear axle ratio</td>
+</tr>
+<tr>
+<td>[, 6]</td>
+<td>wt</td>
+<td>Weight (lb/1000)</td>
+</tr>
+<tr>
+<td>[, 7]</td>
+<td>qsec</td>
+<td>1/4 mile time</td>
+</tr>
+<tr>
+<td>[, 8]</td>
+<td>vs</td>
+<td>V/S</td>
+</tr>
+<tr>
+<td>[, 9]</td>
+<td>am</td>
+<td>Transmission (0 = automatic, 1 = manual)</td>
+</tr>
+<tr>
+<td>[,10]</td>
+<td>gear</td>
+<td>Number of forward gears</td>
+</tr>
+<tr>
+<td>[,11]</td>
+<td>carb</td>
+<td>Number of carburetors</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  
+  <hgroup>
+    <h2>ui.R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">  library(shiny)
+
+shinyUI(
+navbarPage(&quot;Developing Data Products Assignment&quot;,
+           tabPanel(&quot;Simple Regression&quot;,
+           (fluidPage(
+  titlePanel(&quot;Predict Miles per Gallon (mpg) with Simple Regression Models&quot;),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(&quot;variable&quot;, &quot;Select Input for Simple Regression&quot;,
+                  c(&quot;am&quot;,&quot;cyl&quot;,&quot;hp&quot;,&quot;wt&quot;,&quot;disp&quot;,&quot;drat&quot;,&quot;qsec&quot;,&quot;gear&quot;,&quot;carb&quot;)),
+      checkboxInput(&quot;simple_model&quot;,&quot;show simple model&quot;,value=FALSE),
+      submitButton(&quot;Submit&quot;)
+</code></pre>
+
+<hr>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  
+  <hgroup>
+    <h2>server.R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">library(shiny)
+library(ggplot2)
+library(olsrr)
+data(mtcars)
+
+mtcars$cyl &lt;- factor(mtcars$cyl)
+mtcars$vs &lt;- factor(mtcars$vs)
+mtcars$gear &lt;- factor(mtcars$gear)
+mtcars$carb &lt;- factor(mtcars$carb)
+mtcars$am &lt;- factor(mtcars$am,labels=c(&quot;Automatic&quot;,&quot;Manual&quot;))
+
+shinyServer(function(input, output) {
+
+  full_model&lt;-lm(mpg ~ am+cyl+hp+wt+disp+hp+drat+qsec+gear+carb,data=mtcars)
+  best_model&lt;-lm(mpg ~ am+hp+wt+disp+qsec,data=mtcars)
+
+  formula&lt;-reactive({
+    paste(&quot;mpg ~&quot;, input$variable)
+
+  })
+  fit_simple&lt;-reactive({
+    lm(as.formula(formula()),data=mtcars)
+  })
+
+  output$model&lt;-renderText({
+    if(input$simple_model)
+    {formula()}
+  })
+
+  output$simpleboxplot &lt;- renderPlot({
+    # check for the input variable
+    if (input$variable == &quot;am&quot;) {
+      # am
+      mpgData &lt;- data.frame(mpg = mtcars$mpg, var = factor(mtcars[[input$variable]], labels = c(&quot;Automatic&quot;, &quot;Manual&quot;)))
+      p &lt;- ggplot(mpgData, aes(var, mpg,fill=var)) + 
+        geom_boxplot(alpha=0.3) + 
+        xlab(input$variable)+scale_fill_brewer(palette=&quot;BuPu&quot;)
+      print(p)
+
+    }
+    else if(input$variable == &quot;cyl&quot;|input$variable == &quot;vs&quot;|input$variable == &quot;gear&quot;|input$variable == &quot;carb&quot;){
+      # cyl and gear
+      mpgData &lt;- data.frame(mpg = mtcars$mpg, var = factor(mtcars[[input$variable]]))
+      p &lt;- ggplot(mpgData, aes(var, mpg,fill=var)) + 
+        geom_boxplot(alpha=0.3) + 
+        xlab(input$variable)+scale_fill_brewer(palette=&quot;BuPu&quot;)
+      print(p)
+
+    }
+    else{
+      output$simpletext&lt;-renderText({
+
+
+        if (input$variable!= &quot;am&quot;|input$variable != &quot;cyl&quot;|input$variable!= &quot;vs&quot;|input$variable!= &quot;gear&quot;|input$variable!= &quot;carb&quot;){
+
+          print(&quot;We don&#39;t have a categorical grouping variable!&quot;)
+        }
+
+      })
+
+    }
+
+  })
+
+  output$simplesummary&lt;-renderPrint({
+    summary(fit_simple())
+  })
+
+  output$simpleresidual&lt;-renderPlot({
+
+    par(mfrow = c(2, 2))
+    plot(fit_simple())
+  })
+
+
+  output$multisummary&lt;-renderPrint({
+    summary(full_model)
+
+  })
+
+  output$multiresidual&lt;-renderPlot({
+
+    par(mfrow = c(2, 2))
+    plot(full_model)
+  })
+
+  output$bestvariablesubsets&lt;-renderPrint({
+
+    if(input$show)
+    {ols_step_best_subset(full_model,details=TRUE)}
+    else{&quot;Check Show Hide Best Variable Subsets and Press Submit Button&quot;}
+
+  })
+
+  output$fullmodel&lt;-renderText({
+
+    if(input$multimodel)
+      {print(&quot;mpg ~ am+cyl+hp+wt+disp+hp+drat+qsec+gear+carb&quot;)}
+  })
+
+output$variablenumber&lt;-renderPrint({
+
+  if(input$variablenum)
+  {adjr&lt;-ols_step_best_subset(fit_multivariable_full,details = TRUE)$adjr
+  which(adjr==max(adjr))}
+  else{&quot;Check Show Hide Best Variable Number and Press Submit Button&quot;}
+
+})
+
+output$bestvariables&lt;-renderPrint({
+
+  if(input$variables)
+  {
+    adjr&lt;-ols_step_best_subset(fit_multivariable_full,details = TRUE)$adjr
+    var&lt;-ols_step_best_subset(fit_multivariable_full,details = TRUE)$predictors[which(adjr==max(adjr))]
+    print(var)
+ }
+  else{&quot;Check Show Hide Best Variables and Press Submit Button&quot;}
+
+})
+
+output$multisummary2&lt;-renderPrint({
+  summary(best_model)
+
+
+})
+output$multiresidual2&lt;-renderPlot({
+
+  par(mfrow = c(2, 2))
+  plot(best_model)
+})
+})
+
+</code></pre>
+
+<hr>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Coursera Reproducible Pitch'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='mtcars Dataset'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='mtcars Dataset - Format'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='ui.R'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='server.R'>
+         5
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
